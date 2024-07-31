@@ -1,11 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Encriptador de Texto</title>
 </head>
 <body>
-    
+    <header class="logo_alura">
+        <img src="img/logo.png" alt="Logo de Alura">
+    </header> 
+    <main class="formulario">
+        <section class="mensaje_a_encriptar">
+            <p class="mensaje_minusculas" id="mensaje_caja_vacia" hidden>Por favor ingresa el texto a encriptar</p>
+            <p class="mensaje_minusculas" id="mensaje_caracteres_especiales" hidden>No se permiten mayúsculas ni caracteres especiales</p>
+            <textarea cols="40" rows="8" class="texto_normal" type="text" id="texto_normal" placeholder="Ingrese el texto aquí"></textarea>
+            <div class="msg_min">
+                <img src="img/Alert.png" alt="Signo de admiración">
+                <p class="mensaje_minusculas">Sólo letras minúsculas y sin acentos</p>
+            </div>        
+            <div class="botones">
+                <button class="boton_encriptar" onclick="ocultarGrafico(); encriptar(); validarTexto();">Encriptar</button>
+                <button class="boton_desencriptar" id="boton_desencriptar" onclick="desencriptar();">Desencriptar</button>
+            </div>   
+        </section>  
+
+        <div class="mostrarTextoEncriptado">
+            <div class="mensaje" id="mensaje" hidden>  
+                <textarea cols="20" rows="10" class="texto_encriptado" type="text" id="texto_encriptado"></textarea>
+                <button class="boton_copiar_texto_encriptado" id="boton_copiar_texto_encriptado" onclick="copiarTextoEncriptado();">Copiar</button>          
+            </div>  
+            <div class="noMensaje" id="div_grafico">
+                <img src="img/Muñeco.png" alt="Imagen de una persona mirando a través de una lupa">
+                <h3 class="no_mensaje">Ningún mensaje fue<br> encontrado</h3>
+                <h4 class="no_mensaje2">Ingresa el texto que desees encriptar o<br> desencriptar</h4>   
+            </div>                
+        </div>
+    </main>
+    <footer class="footer">
+        Desarrollado por Nelson Ramírez para el challenge de Alura Latam y ONE
+    </footer>
 </body>
 </html>
